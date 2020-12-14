@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package gridscan;
+
+option java_package = "com.sngsnd.gridscan";
+option java_multiple_files = true;
+
+message SingleScan {
+  string scan_info = 1;
+}
+
+message SingleScanRequest {
+  SingleScan single_scan = 1;
+}
+
+message SingleScanResponse {
+  string result = 1;
+}
+
+service ScanService {
+  rpc SingleScan(SingleScanRequest) returns (SingleScanResponse) {};
+}
